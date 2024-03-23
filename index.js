@@ -1,5 +1,8 @@
 import express from "express";
 import jwt from "jsonwebtoken";
+import mongoose from 'mongoose'
+
+mongoose.connect()
 
 const app = express();
 
@@ -11,7 +14,7 @@ app.post("/auth/login", (req, res) => {
   const token = jwt.sign(
     {
       email: req.body.email,
-      fullname: "Dafalena",
+      fullName: "Dafalena",
     },
     "secret123"
   );
